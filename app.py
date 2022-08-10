@@ -62,7 +62,7 @@ def analyze_webpage(wp_url):
         if len(script_src) > 0:
             scripts_sc = scrap_resource(script_src)
 
-    except requests.ConnectionError:
+    except requests.exceptions.ConnectionError:
         msg = "Sorry, the requested web page url is invalid."
         return msg
     except requests.exceptions.MissingSchema:
@@ -106,11 +106,12 @@ Total JS Script: {len(scripts)}
 
 
 if __name__ == "__main__":
-    url = "https://stackoverflow.com"
+    url = "https://www.sta.com/python-check-if-string-contains-substring/"
     analyze_result = analyze_webpage(url)
     if type(analyze_result) is dict:
         summary = analyze_result['s']
         print(summary)
     else:
         print(analyze_result)
+
 

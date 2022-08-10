@@ -1,4 +1,5 @@
 from urllib.parse import urlparse
+from collections import Counter
 
 
 def validate_webpage(r):
@@ -17,7 +18,12 @@ def webpage_type(p):
 def get_domain(url):
     d = ""
     url_parse = urlparse(url).netloc
-    d = url_parse.split("www.")[-1]
+    url_arr = Counter(url_parse)
+    if url_arr['.'] > 1:
+        d_pos = url_parse.find('.')
+        d = url_parse[d_pos + 1:]
+    else:
+        d = url_parse
     return d
 
 
