@@ -62,7 +62,7 @@ def analyze_webpage(wp_url):
         if len(script_src) > 0:
             scripts_sc = scrap_resource(script_src)
 
-    except requests.exceptions.ConnectionError:
+    except requests.ConnectionError:
         msg = "Sorry, the requested web page url is invalid."
         return msg
     except requests.exceptions.MissingSchema:
@@ -106,7 +106,7 @@ Total JS Script: {len(scripts)}
 
 
 if __name__ == "__main__":
-    url = "https://drive.google.com/uc?export=download&id=1r1Urz_92YixjegWvaW_6cVTJQvGCOmGk"
+    url = "https://stackoverflow.com"
     analyze_result = analyze_webpage(url)
     if type(analyze_result) is dict:
         summary = analyze_result['s']
