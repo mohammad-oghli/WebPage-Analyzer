@@ -52,7 +52,63 @@ Total Video: 0
 Total JS Script: 14
 </pre>
 
-Diplay internal links of the wep page:
+Define this function to display content of any tag sources:
 <pre>
-text_analytics['in_links']
+def display_src(src_arr):
+    if len(src_arr) > 0:
+        print(*src_arr, sep="\n")
+    else:
+        print("Sorry, no sources for this tag")
+</pre>
+
+
+Display internal links of the requested wep page:
+<pre>
+display_src(webpage_analytics['in_links'])
+</pre>
+
+It will output links in this format:
+<pre>
+https://www.stackoverflow.com/#
+https://www.stackoverflow.com/teams
+https://www.stackoverflow.com/questions
+https://www.stackoverflow.com/teams
+https://stackoverflow.com
+</pre>
+
+Display external links of the requested wep page:
+<pre>
+display_src(webpage_analytics['ex_links'])
+</pre>
+
+Output:
+<pre>
+https://www.facebook.com/officialstackoverflow/
+https://twitter.com/stackoverflow
+https://linkedin.com/company/stack-overflow
+https://www.instagram.com/thestackoverflow
+</pre>
+Display images sources of the requested wep page:
+<pre>
+display_src(webpage_analytics['images'])
+</pre>
+Output:
+<pre>
+https://cdn.sstatic.net/Img/teams/teams-illo-free-sidebar-promo.svg?v=47faa659a05e
+https://cdn.sstatic.net/Img/home/illo-code.svg?v=b7ee00fff9d8
+https://cdn.sstatic.net/Img/home/illo-code.svg?v=b7ee00fff9d8
+https://cdn.sstatic.net/Img/home/illo-public.svg?v=14bd5a506009
+https://cdn.sstatic.net/Img/home/illo-teams.svg?v=7e543f14fcc0
+</pre>
+Display audio sources:
+<pre>
+display_src(webpage_analytics['audios'])
+</pre>
+Display video sources:
+<pre>
+display_src(webpage_analytics['videos'])
+</pre>
+Display scripts sources:
+<pre>
+display_src(webpage_analytics['scripts'])
 </pre>
