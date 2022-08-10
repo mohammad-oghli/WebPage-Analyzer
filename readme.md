@@ -1,6 +1,6 @@
 # Web Page Analyzer (Daisi Hackathon)
 
-Python function as a web service to scrape and analyze web page data according to most common HTML tags.
+Python function as a web service to scrape and analyze web page data according to most common **HTML** tags.
 
 It will return the following information:
 
@@ -14,7 +14,7 @@ Step 1 : Load the Daisi
 import pydaisi as pyd
 web_page_analyzer = pyd.Daisi("oghli/Web Page Analyzer")
 </pre>
-Step 2 : call the `web_page_analyzer` end point, passing input file download link to process and analyze text data
+Step 2 : call the `web_page_analyzer` end point, passing web page url to analyze its HTML content
 
 <pre>
 url = "https://drive.stackoverflow.com"
@@ -24,7 +24,7 @@ webpage_analytics
 
 returns a dictionary containing information about the requested web page.
 
-Step 3 : print text file analysis summary 
+Step 3 : print web page analysis summary 
 <pre>
 webpage_analytics['s']
 </pre>
