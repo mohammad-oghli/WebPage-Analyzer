@@ -26,7 +26,7 @@ def analyze_webpage(wp_url):
     try:
         response = requests.get(wp_url)
         if not validate_webpage(response):
-            msg = "Sorry, the requested url isn't a valid web page."
+            msg = "Sorry, the requested url isn't a web page."
             return msg
         data = response.text
         domain = get_domain(wp_url)
