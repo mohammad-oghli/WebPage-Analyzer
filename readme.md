@@ -17,7 +17,7 @@ web_page_analyzer = pyd.Daisi("oghli/Web Page Analyzer")
 Step 2 : call the `web_page_analyzer` end point, passing web page url to analyze its HTML content
 
 <pre>
-url = "https://drive.stackoverflow.com"
+url = "https://www.stackoverflow.com"
 webpage_analytics = web_page_analyzer.analyze_webpage(url).value
 webpage_analytics
 </pre>
