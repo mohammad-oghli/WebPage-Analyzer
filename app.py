@@ -106,7 +106,7 @@ Total JS Script: {len(scripts)}
 
 
 if __name__ == "__main__":
-    url = "https://www.sta.com/python-check-if-string-contains-substring/"
+    url = "https://stackoverflow.com"
     analyze_result = analyze_webpage(url)
     if type(analyze_result) is dict:
         summary = analyze_result['s']
