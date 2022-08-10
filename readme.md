@@ -52,7 +52,7 @@ Total Video: 0
 Total JS Script: 14
 </pre>
 
-Define this function to display content of any tag sources:
+Define helper function to display content of any tag sources:
 <pre>
 def display_src(src_arr):
     if len(src_arr) > 0:
