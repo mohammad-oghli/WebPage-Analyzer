@@ -4,7 +4,7 @@ Python function as a web service to scrape and analyze web page data according t
 
 It will return the following information:
 
-Web page title, Type of the web page, Domain of requested web page, number of headings `<h1>..<h6>` tags, number of paragraphs `<p>` tags, number of ordered & unordered `<ol><ul>` tags, number of images `<img>` tags, number of internal links of the requested web page, number of external links of the webpage, number of tables `<table>` tags, number of forms `<form>` tags, number of inputs `<input>` tags, number of buttons `<button>` tags, number of code snippets `<code>` tags, number of dropdown lists `<select>` tags, number of audios `<audio>` tags, number of videos `<video>` tags, number of Javascript client scripts `<script>` tags.
+Web page title, Type of the web page, Domain of requested web page, number of heading `<h1>..<h6>` tags, number of paragraph `<p>` tags, number of ordered & unordered list `<ol><ul>` tags, number of image `<img>` tags, number of internal links of the requested web page, number of external links of the webpage, number of table `<table>` tags, number of form `<form>` tags, number of input `<input>` tags, number of button `<button>` tags, number of code snippet `<code>` tags, number of dropdown list `<select>` tags, number of audio `<audio>` tags, number of video `<video>` tags, number of Javascript client script `<script>` tags.
 
 How to call it from Python:
 
