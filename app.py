@@ -90,6 +90,13 @@ Total Video: {len(videos)}
 Total JS Script: {len(scripts)}
     """
     web_page['s'] = summary
+    web_page['h'] = len(headings)
+    web_page['p'] = len(paragraphs)
+    web_page['l'] = len(lists)
+    web_page['img'] = len(images)
+    web_page['href'] = len(links)
+    web_page['table'] = len(tables)
+    web_page['form'] = len(forms)
     web_page['in_links'] = in_links
     web_page['ex_links'] = ex_links
     web_page['images'] = images_sc
@@ -100,7 +107,7 @@ Total JS Script: {len(scripts)}
 
 
 if __name__ == "__main__":
-    url = "http://www.stackoverflow.com"
+    url = "https://drive.google.com/uc?export=download&id=1r1Urz_92YixjegWvaW_6cVTJQvGCOmGk"
     analyze_result = analyze_webpage(url)
     if type(analyze_result) is dict:
         summary = analyze_result['s']
