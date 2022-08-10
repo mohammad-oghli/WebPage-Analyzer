@@ -70,7 +70,7 @@ def scrap_av_media(soup, m_resources):
         return v_src
 
 
-def print_sources(src_arr):
+def display_sources(src_arr):
     if len(src_arr) > 0:
         print(*src_arr, sep="\n")
     else:
