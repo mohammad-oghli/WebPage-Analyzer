@@ -102,6 +102,7 @@ Total JS Script: {len(scripts)}
     web_page['audios'] = audio_src
     web_page['videos'] = video_src
     web_page['scripts'] = scripts_sc
+    web_page['display'] = print_sources
     return web_page
 
 

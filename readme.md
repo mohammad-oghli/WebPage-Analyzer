@@ -52,3 +52,7 @@ Total Video: 0
 Total JS Script: 14
 </pre>
 
+Diplay internal links of the wep page:
+<pre>
+text_analytics['in_links']
+</pre>
