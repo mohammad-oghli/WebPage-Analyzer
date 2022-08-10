@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
 from helper import webpage_type, validate_webpage, get_domain, scrap_links\
-    , scrap_resource, scrap_av_media, print_sources
+    , scrap_resource, scrap_av_media, display_sources
 
 
 def analyze_webpage(wp_url):
