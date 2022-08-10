@@ -92,7 +92,6 @@ Total JS Script: {len(scripts)}
     web_page['s'] = summary
     web_page['h'] = len(headings)
     web_page['p'] = len(paragraphs)
-    web_page['li'] = len(lists)
     web_page['img'] = len(images)
     web_page['href'] = len(links)
     web_page['table'] = len(tables)
