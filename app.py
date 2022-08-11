@@ -24,6 +24,7 @@ def analyze_webpage(wp_url):
     audio_src = []
     video_src = []
     try:
+        wp_url = wp_url.strip()
         response = requests.get(wp_url)
         if not validate_webpage(response):
             msg = "Sorry, the requested url isn't a web page."
@@ -102,7 +103,7 @@ Total JS Script: {len(scripts)}
     web_page['audios'] = audio_src
     web_page['videos'] = video_src
     web_page['scripts'] = scripts_sc
-    #web_page['display'] = print_sources
+    #web_page['display'] = display_sources
     return web_page
 
 
