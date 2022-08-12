@@ -112,5 +112,5 @@ Display scripts sources:
 <pre>
 display_src(webpage_analytics['scripts'])
 </pre>
-For more info check the Daisi documentation: https://doc.daisi.io/
+For more info check Daisi documentation: https://doc.daisi.io/
 
