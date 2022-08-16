@@ -24,6 +24,7 @@ def analyze_webpage(wp_url):
     scripts_sc = []
     audio_src = []
     video_src = []
+    avg_ex = 0.0
     try:
         wp_url = wp_url.strip()
         response = requests.get(wp_url)
@@ -70,8 +71,8 @@ def analyze_webpage(wp_url):
     except requests.exceptions.MissingSchema:
         msg = "Incorrect requested url format!"
         return msg
-
-    avg_ex = round((len(ex_links) * 100) / len(links), 2)
+    if len(links) > 0:
+        avg_ex = round((len(ex_links) * 100) / len(links), 2)
 
     summary = f"""____________Summary______________
 Webpage Title: {title}
