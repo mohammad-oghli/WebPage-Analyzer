@@ -1,6 +1,7 @@
+import streamlit as st
 from bs4 import BeautifulSoup
 import requests
-from helper import webpage_type, validate_webpage, get_domain, scrap_links\
+from helper import webpage_type, validate_webpage, get_domain, scrap_links \
     , scrap_resource, scrap_av_media, display_sources
 
 
@@ -70,6 +71,8 @@ def analyze_webpage(wp_url):
         msg = "Incorrect requested url format!"
         return msg
 
+    avg_ex = round((len(ex_links) * 100) / len(links), 2)
+
     summary = f"""____________Summary______________
 Webpage Title: {title}
 Type: {w_type}
@@ -80,6 +83,7 @@ Total List: {len(lists)}
 Total Image: {len(images)}
 Total Internal link: {len(in_links)}
 Total External link: {len(ex_links)}
+Average External linking: {avg_ex} %
 Total Table: {len(tables)}
 Total Form: {len(forms)}
 Total Input: {len(inputs)}
@@ -91,29 +95,73 @@ Total Video: {len(videos)}
 Total JS Script: {len(scripts)}
     """
     web_page['s'] = summary
-    web_page['h'] = len(headings)
-    web_page['p'] = len(paragraphs)
-    web_page['img'] = len(images)
     web_page['href'] = len(links)
-    web_page['table'] = len(tables)
-    web_page['form'] = len(forms)
     web_page['in_links'] = in_links
     web_page['ex_links'] = ex_links
+    web_page['avg_ex'] = avg_ex
     web_page['images'] = images_sc
     web_page['audios'] = audio_src
     web_page['videos'] = video_src
     web_page['scripts'] = scripts_sc
-    #web_page['display'] = display_sources
+    # web_page['display'] = display_sources
     return web_page
 
 
+def st_ui():
+    '''
+    Render the User Interface of the application endpoints
+    '''
+    st.title("Web Page Analyzer")
+    st.header("Enter a web page url to analyze its content")
+    url = st.text_input(label='Web Site URL', placeholder='type your url')
+    if url:
+        analyze_result = analyze_webpage(url)
+        if type(analyze_result) is dict:
+            summary = analyze_result['s']
+            st.subheader("Brief Information")
+            st.text(summary)
+            st.subheader("Detailed Information")
+            if analyze_result['in_links']:
+                st.write("##### _Internal Links Source_")
+                for item in analyze_result['in_links']:
+                    st.write(item)
+                st.markdown("""---""")
+            if analyze_result['ex_links']:
+                st.write("##### _External Links Source_")
+                for item in analyze_result['ex_links']:
+                    st.write(item)
+                st.markdown("""---""")
+            if analyze_result['images']:
+                st.write("##### _Images Source_")
+                for item in analyze_result['images']:
+                    st.write(item)
+                st.markdown("""---""")
+            if analyze_result['audios']:
+                st.write("##### _Audio Source_")
+                for item in analyze_result['audios']:
+                    st.write(item)
+                st.markdown("""---""")
+            if analyze_result['videos']:
+                st.write("##### _Video Source_")
+                for item in analyze_result['videos']:
+                    st.write(item)
+                st.markdown("""---""")
+            if analyze_result['scripts']:
+                st.write("##### _Scripts Source_")
+                for item in analyze_result['scripts']:
+                    st.write(item)
+                st.markdown("""---""")
+        else:
+            st.error(analyze_result)
+
+
 if __name__ == "__main__":
-    url = "https://stackoverflow.com"
-    analyze_result = analyze_webpage(url)
-    if type(analyze_result) is dict:
-        summary = analyze_result['s']
-        print(summary)
-    else:
-        print(analyze_result)
-
-
+    # render the app using streamlit ui function
+    st_ui()
+    # url = "https://stackoverflow.com"
+    # analyze_result = analyze_webpage(url)
+    # if type(analyze_result) is dict:
+    #     summary = analyze_result['s']
+    #     print(summary)
+    # else:
+    #     print(analyze_result)

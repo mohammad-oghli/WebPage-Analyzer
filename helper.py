@@ -72,6 +72,6 @@ def scrap_av_media(soup, m_resources):
 
 def display_sources(src_arr):
     if len(src_arr) > 0:
-        print(*src_arr, sep="\n")
+        return "\n".join(src_arr)
     else:
-        print("Sorry, no sources for this tag")
+        return "Sorry, no sources for this tag"

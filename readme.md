@@ -112,5 +112,10 @@ Display scripts sources:
 <pre>
 display_src(webpage_analytics['scripts'])
 </pre>
+
+Function `st_ui` included in the app to render the user interface of the application endpoints.
+
 For more info check Daisi documentation: https://doc.daisi.io/
+
+
 
