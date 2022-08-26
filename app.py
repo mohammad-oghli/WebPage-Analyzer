@@ -113,6 +113,8 @@ def st_ui():
     Render the User Interface of the application endpoints
     '''
     st.title("Web Page Analyzer")
+    st.caption("Meta Data Extraction")
+    st.info("Developed by Oghli")
     st.header("Enter a web page url to analyze its content")
     url = st.text_input(label='Web Site URL', placeholder='type your url')
     if url:
