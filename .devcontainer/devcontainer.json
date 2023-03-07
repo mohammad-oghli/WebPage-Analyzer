@@ -1,0 +1,38 @@
+
+  {
+    // image being used
+   "image": "mcr.microsoft.com/devcontainers/universal:2",
+  // set minimum cpu
+   "hostRequirements": {
+       "cpus": 4
+   },
+   // install dependencies and start app
+   "updateContentCommand": "pip install -r requirements",
+   "postAttachCommand": "python -m streamlit run app.py --server.enableCORS false --server.enableXsrfProtection false",
+   // open app.tsx once container is built
+   "customizations": {
+       "codespaces": {
+           "openFiles": [
+               "src/app.py"
+           ]
+       },
+       // install some vscode extensions
+       "vscode": {
+           "extensions": [
+               "ms-python.python",
+               "ms-toolsai.jupyter",
+               "ms-azuretools.vscode-docker",
+               "gencay.vscode-chatgpt"
+           ]
+       }
+   },
+   // connect to remote server
+   "forwardPorts": [3000],
+   // give port a label and open a preview of the app
+   "portsAttributes": {
+      "3000": {
+         "label": "Application",
+         "onAutoForward": "openPreview"
+       }
+     }
+}
