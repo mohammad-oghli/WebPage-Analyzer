@@ -25,14 +25,5 @@
                "gencay.vscode-chatgpt"
            ]
        }
-   },
-   // connect to remote server
-   "forwardPorts": [3000],
-   // give port a label and open a preview of the app
-   "portsAttributes": {
-      "3000": {
-         "label": "Application",
-         "onAutoForward": "openPreview"
-       }
-     }
+   }
 }
