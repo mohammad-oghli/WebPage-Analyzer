@@ -7,7 +7,7 @@
        "cpus": 4
    },
    // install dependencies and start app
-   "updateContentCommand": "pip install -r requirements",
+   "updateContentCommand": "pip install -r requirements.txt",
    "postAttachCommand": "python -m streamlit run app.py --server.enableCORS false --server.enableXsrfProtection false",
    // open app.tsx once container is built
    "customizations": {
