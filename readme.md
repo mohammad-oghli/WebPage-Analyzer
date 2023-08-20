@@ -6,7 +6,7 @@ It will return the following information:
 
 Web page title, Type of the web page, Domain of requested web page, number of heading `<h1>..<h6>` tags, number of paragraph `<p>` tags, number of ordered & unordered list `<ol><ul>` tags, number of image `<img>` tags, number of internal links of the requested web page, number of external links of the webpage, number of table `<table>` tags, number of form `<form>` tags, number of input `<input>` tags, number of button `<button>` tags, number of code snippet `<code>` tags, number of dropdown list `<select>` tags, number of audio `<audio>` tags, number of video `<video>` tags, number of Javascript client script `<script>` tags.
 
-How to call it from Python:
+## How to call it from Python
 
 Step 1 : Load the Daisi
 
